@@ -84,13 +84,14 @@ class Bank:
 
     def deposit(self, account: int, amt: float):
         if account in self.accounts:
+            # account = self.accounts.get(azccount)
             self.accounts[account] += amt
         # self.accounts[acct_num] = amt
             print('Deposited amount: ' + str(amt))
-        else:
-            raise ValueError(f"Account {account} not valid.")
+        # else:
+        #     raise ValueError(f"Account {account} not valid.")
 
-    def withdraw(self, account: int, amt: float):
+    def withdrawal(self, account: int, amt: float):
         if amt <= self.accounts[account]:
             self.accounts[account] -= amt
         else:
@@ -129,11 +130,11 @@ print(zc_bank.accounts)
 zc_bank.balance_inquiry(1001)
 # # # 0
 
-# zc_bank.balance_inquiry(1001)
-# # 256.02
-# zc_bank.withdrawal(1001, 128)
-# zc_bank.balance_inquiry(1001)
-#
-# zc_bank.add_account(bob_savings)
-# zc_bank.add_account(bob_savings)
+zc_bank.balance_inquiry(1001)
+# 256.02
+zc_bank.withdrawal(1001, 128)
+zc_bank.balance_inquiry(1001)
+
+zc_bank.add_account(bob_savings)
+zc_bank.add_account(bob_savings)
 zc_bank.deposit(1001, 256.02)
